@@ -1,45 +1,35 @@
 # SumaDeTransacciones
 
-https://github.com/PabloRoher/SumaDeTransacciones.git 
+https://github.com/PabloRoher/SumaDeTransacciones/tree/MongoDB.git
 
-Eres un desarrollador de software en una gran corporación con múltiples departamentos como informática, gerencia, contabilidad, comercio y recursos humanos. Cada departamento realiza varias transacciones financieras diarias, y todas estas transacciones se registran y almacenan en archivos de texto individuales correspondientes a cada departamento.
+Enunciado de la Práctica: Implementación de Programación Concurrente en Bases de Datos NoSQL
 
-Dado el volumen de transacciones, la empresa necesita una forma eficiente de procesar y sumar todas las transacciones de cada departamento. Sin embargo, dado que los archivos se actualizan constantemente a lo largo del día, no es posible realizar este procesamiento de forma secuencial, ya que llevaría demasiado tiempo.
+Objetivos de la práctica:
 
-Para abordar este desafío, la empresa te ha pedido que desarrolles un programa que pueda procesar y sumar las transacciones de cada archivo de manera concurrente, utilizando el paralelismo de la máquina.
+En esta práctica, nuestro objetivo será obtener una comprensión práctica de cómo aplicar los principios de la programación concurrente en un entorno de base de datos NoSQL. Implementaremos diferentes estrategias de programación concurrente y evaluaremos su rendimiento al manejar grandes volúmenes de datos.
 
-Además, para facilitar la revisión y el análisis posterior, el programa debe generar un archivo de resultados para cada departamento, que contendrá la suma total de las transacciones del respectivo departamento. Por ejemplo, los resultados para el archivo "informatica.txt" se almacenarán en "informatica.txt.res".
+En la era actual de Big Data, las organizaciones generan y consumen cantidades enormes de información diariamente. Con tanta información disponible, las bases de datos tradicionales SQL pueden resultar ineficientes para manejar volúmenes de datos tan masivos y estructuras de datos complejas. Por lo tanto, las bases de datos NoSQL se han convertido en una elección popular debido a su escalabilidad y flexibilidad. Sin embargo, la eficiencia de estas bases de datos puede mejorarse aún más con el uso de la programación concurrente.
 
-Finalmente, para tener una visión completa de las transacciones de toda la empresa, el programa debe sumar todas las sumas de cada departamento y guardar el total en un archivo llamado "Resultado_global.txt".
+Detalles de la tarea:
 
-Debido a la posible magnitud de las transacciones, debes utilizar el tipo de dato long. Además, tu programa debe manejar correctamente las posibles excepciones, como los errores de entrada/salida.
+Para la base de datos NoSQL, puedes optar por utilizar MongoDB, que es una base de datos orientada a documentos, o Apache Cassandra, que es una base de datos orientada a columnas. Ambas opciones son open-source y tienen amplia documentación disponible.
 
-Para organizar tu trabajo, puedes considerar la creación de las siguientes clases:
+En cuanto a los datos, puedes utilizar conjuntos de datos públicos disponibles en recursos como Kaggle, Google Dataset Search o el Portal de Datos Abiertos del Gobierno. Sin embargo, elige un conjunto de datos que sea lo suficientemente grande para que sea relevante el uso de programación concurrente.
 
-UtilidadesFicheros: con métodos útiles para el procesamiento de archivos, incluyendo uno para obtener la suma de las transacciones de un conjunto de archivos.
-ProcesadorContabilidad: que procesará un archivo, sumará las transacciones y almacenará el resultado en el archivo correspondiente.
-Lanzador: que controlará el flujo de la aplicación, lanzando un proceso ProcesadorContabilidad para cada archivo y luego agregando todos los resultados.
-Tu programa consistirá en varias clases que pueden estar dispersas en diferentes directorios, por lo que tu método main necesitará tomar el CLASSPATH de los argumentos.
+Podrías optar por un conjunto de datos relacionados con transacciones de comercio electrónico, tweets de Twitter, datos meteorológicos históricos, registros de sensores de IoT, etc. Recuerda, cuanto más grande y complejo sea el conjunto de datos, más interesantes serán los desafíos al implementar la programación concurrente.
 
-Al final del proyecto, debes entregar el código fuente de tu programa, incluyendo todas las clases necesarias. Esto permitirá a la empresa procesar sus transacciones de manera eficiente, ahorrando tiempo y recursos.
+Para la implementación de la programación concurrente, puedes usar herramientas y bibliotecas como ExecutorService y Future en Java, o ThreadPoolExecutor en Python. Estas herramientas te permiten gestionar la creación de hilos, su ejecución y la recolección de resultados de manera eficiente.
 
-Rúbrica para Evaluar el Proyecto de Procesamiento Concurrente y Suma de Transacciones Financieras de Departamentos
+En cuanto a las pruebas de rendimiento, existen varias herramientas que puedes usar para monitorear y registrar el rendimiento de tu aplicación, como JMeter, Gatling o incluso las herramientas de monitoreo integradas en tu IDE.
 
-Funcionalidad y Correctitud (40 puntos)
+Detalles de la tarea:
 
-El programa procesa y suma las transacciones de cada archivo correctamente (10 puntos).
-El programa genera correctamente los archivos de resultados con las sumas de las transacciones para cada archivo de entrada (10 puntos).
-El programa suma correctamente las sumas de cada archivo de resultados y guarda el total en "Resultado_global.txt" (10 puntos).
-El programa maneja correctamente las excepciones, especialmente los errores de entrada/salida (10 puntos).
-Concurrencia y Paralelismo (20 puntos)
+Configuración inicial: Inicia configurando una base de datos NoSQL (puedes elegir entre una base de datos clave-valor, orientada a documentos, orientada a columnas o una base de datos de grafos).
 
-El programa aprovecha adecuadamente la concurrencia y el paralelismo para procesar los archivos (10 puntos).
-El programa gestiona correctamente la sincronización entre los hilos, evitando condiciones de carrera y bloqueos (10 puntos).
-Diseño del Código y Estructura (20 puntos)
+Modelado de datos: Modela un conjunto de datos para tu base de datos NoSQL elegida. Los datos deben ser lo suficientemente complejos para requerir el uso de programación concurrente (por ejemplo, un número significativo de registros o una estructura de datos compleja).
 
-Las clases y métodos están bien organizados y siguen los principios de la programación orientada a objetos (10 puntos).
-El código está limpio, bien comentado y fácil de entender y mantener (10 puntos).
-Pruebas y Robustez (20 puntos)
+Implementación de programación concurrente: Implementa la programación concurrente para realizar operaciones en tu base de datos. Esto puede implicar el uso de múltiples hilos o procesos para manejar las operaciones de lectura y escritura, la implementación de bloqueos y otras estrategias de control de concurrencia, o el uso de bibliotecas de programación concurrente de alto nivel.
 
-El programa funciona correctamente con varios conjuntos de datos de prueba, incluyendo casos límite (10 puntos).
-El programa es robusto y puede manejar entradas inesperadas y errores de manera elegante (10 puntos).
+Pruebas y evaluación de rendimiento: Realiza pruebas de rendimiento en tu implementación. ¿Cómo se compara el rendimiento de tu implementación con y sin programación concurrente? Considera el tiempo de ejecución, el uso de recursos y cualquier otro factor de rendimiento relevante.
+
+Informe de la práctica: Escribe un informe que documente tu enfoque, los desafíos que encontraste y cómo los resolviste, los resultados de tus pruebas de rendimiento y cualquier hallazgo o conclusión interesante que hayas obtenido de la práctica.
