@@ -1,6 +1,6 @@
 # SumaDeTransacciones
 
-https://github.com/PabloRoher/SumaDeTransacciones/tree/MongoDB.git
+https://github.com/PabloRoher/SumaDeTransacciones/tree/MongoDB
 
 Enunciado de la Práctica: Implementación de Programación Concurrente en Bases de Datos NoSQL
 
